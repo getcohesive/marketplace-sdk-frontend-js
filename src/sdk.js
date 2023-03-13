@@ -1,11 +1,12 @@
-import { makeAjaxCall, setupPageSync } from "./communication"
+import { makeAjaxCall, setupPageSync } from "./communication";
 export const CohesiveSDK = {
     host: undefined,
     axios: undefined,
 
-    init: (host) => {
+    init: (host, axios) => {
         CohesiveSDK.host = host
-        CohesiveSDK.axios = axios.create(this.host);
+        // CohesiveSDK.axios = axios.create(this.host);
+        CohesiveSDK.axios = axios ? axios : axios.create(this.host);
         CohesiveSDK.axios.interceptors.request.use(async (config) => {
             const { JWTToken } = await CohesiveSDK.getToken();
             if (config.headers) {
