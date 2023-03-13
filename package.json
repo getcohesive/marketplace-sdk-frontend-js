@@ -1,0 +1,26 @@
+{
+  "name": "cohesive-sdk",
+  "version": "1.0.0",
+  "description": "Cohesive SDK is used to create apps for the Cohesive SaaS marketplace",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/getcohesive/cohesive-sdk.git"
+  },
+  "keywords": [
+    "cohesive",
+    "saas",
+    "marketplace",
+    "saas",
+    "marketplace"
+  ],
+  "author": "Chinmay Relkar, Shobhit Kuruvilla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/getcohesive/cohesive-sdk/issues"
+  },
+  "homepage": "https://github.com/getcohesive/cohesive-sdk#readme"
+}
