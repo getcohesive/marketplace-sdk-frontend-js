@@ -2,7 +2,11 @@
   "name": "cohesive-sdk",
   "version": "1.0.0",
   "description": "Cohesive SDK is used to create apps for the Cohesive SaaS marketplace",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
   "scripts": {
     "test": "test"
   },
