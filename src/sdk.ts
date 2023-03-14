@@ -1,5 +1,5 @@
-import { parseJwt } from "./common";
-import { makeAjaxCall, setupPageSync } from "./communication";
+import { parseJwt } from './common';
+import { makeAjaxCall, setupPageSync } from './communication';
 
 export const CohesiveSDK: ICohesiveSDK = {
   host: null,
@@ -9,11 +9,11 @@ export const CohesiveSDK: ICohesiveSDK = {
     CohesiveSDK.host = host;
     // CohesiveSDK.axios = axios.create(this.host);
     CohesiveSDK.axios = axios ? axios : axios.create(host);
-    CohesiveSDK.axios.interceptors.request.use(async (config) => {
+    CohesiveSDK.axios.interceptors.request.use(async (config: any) => {
       const { JWTToken } = await CohesiveSDK.getToken();
       if (config.headers) {
-        config.headers.set("Authorization", `Bearer ${JWTToken}`);
-        config.headers.set("X-COHESIVE-ENABLED", true);
+        config.headers.set('Authorization', `Bearer ${JWTToken}`);
+        config.headers.set('X-COHESIVE-ENABLED', true);
       }
       return config;
     });
@@ -27,15 +27,15 @@ export const CohesiveSDK: ICohesiveSDK = {
     return parseJwt(JWTToken);
   },
   getToken: async () => {
-    return await makeAjaxCall("USER_DATA");
-  },
+    return await makeAjaxCall('USER_DATA');
+  }
 };
 
 interface ICohesiveSDK {
   host: string | null;
   axios: any | null;
   init: (host: string, axios: any) => void;
-  getUserData: () => Promise<IUser>;
+  getUserData: () => Promise<IUser | undefined>;
   getToken: () => Promise<{ JWTToken: string }>;
 }
 

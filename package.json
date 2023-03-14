@@ -8,7 +8,9 @@
     "/dist"
   ],
   "scripts": {
-    "test": "test"
+    "build": "tsc",
+    "lint": "eslint --ignore-path .gitignore src --ext .ts,.tsx,.js,.jsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -26,5 +28,10 @@
   "bugs": {
     "url": "https://github.com/getcohesive/cohesive-sdk/issues"
   },
-  "homepage": "https://github.com/getcohesive/cohesive-sdk#readme"
+  "homepage": "https://github.com/getcohesive/cohesive-sdk#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.55.0",
+    "@typescript-eslint/parser": "^5.55.0",
+    "typescript": "^4.9.5"
+  }
 }

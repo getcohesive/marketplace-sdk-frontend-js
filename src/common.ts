@@ -1,7 +1,7 @@
 export const ERROR = 1;
 export const DEBUG = 2;
-const LOG_PREFIX = "COHESIVE_SDK";
-var LOG_LEVEL = ERROR;
+const LOG_PREFIX = 'COHESIVE_SDK';
+const LOG_LEVEL = ERROR;
 
 /**
  * SDK Log fn
@@ -38,16 +38,16 @@ export const log = (level: number, message: any) => {
  * or undefined if parsing failed
  */
 export function parseJwt<T>(token: string): T | undefined {
-  var base64Url = token.split(".")[1];
-  var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
-  var jsonPayload = decodeURIComponent(
+  const base64Url = token.split('.')[1];
+  const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+  const jsonPayload = decodeURIComponent(
     window
       .atob(base64)
-      .split("")
+      .split('')
       .map(function (c) {
-        return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
       })
-      .join("")
+      .join('')
   );
 
   return JSON.parse(jsonPayload);
