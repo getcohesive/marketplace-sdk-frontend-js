@@ -1,3 +1,3 @@
-import { CohesiveSDK } from 'src/sdk.js'
+import { CohesiveSDK } from './src/sdk'
 
 module.exports = CohesiveSDK
